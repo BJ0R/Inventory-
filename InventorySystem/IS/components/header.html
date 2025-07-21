@@ -1,0 +1,143 @@
+<style>
+    :root {
+        --secondary-color: #8f0002;
+        --accent-color: hsl(47, 100%, 50%);
+        --light-bg: #f9f5db;
+        --text-light: #ffffff;
+        --sidebar-width: 250px;
+        --content-max-width: 1200px;
+    }
+
+    .main-content {
+        margin-left: var(--sidebar-width);
+        padding: 0;
+        transition: margin-left 0.3s ease;
+        width: calc(100% - var(--sidebar-width));
+    }
+
+    header {
+        background-color: var(--secondary-color);
+        color: var(--text-light);
+        padding: 1rem;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+    }
+
+    .header-content {
+        max-width: var(--content-max-width);
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
+
+    header h1 {
+        margin: 0 0 0.25rem;
+        font-weight: 700;
+        font-size: 2rem;
+        letter-spacing: 0.5px;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        line-height: 1.2;
+    }
+
+    header p {
+        font-style: italic;
+        font-size: 1rem;
+        margin: 0;
+        opacity: 0.9;
+    }
+
+    /* Large devices (laptops/desktops, 1025px and up) */
+    @media (min-width: 1025px) {
+        .main-content {
+            margin-left: var(--sidebar-width);
+            width: calc(100% - var(--sidebar-width));
+        }
+        
+        header {
+            padding: 1.5rem 1rem;
+        }
+        
+        header h1 {
+            font-size: 2.25rem;
+        }
+        
+        header p {
+            font-size: 1.1rem;
+        }
+    }
+
+    /* Large devices (laptops/desktops, 1024px and down) */
+    @media (max-width: 1024px) {
+        .main-content {
+            margin-left: 0;
+            width: 100%;
+        }
+        
+        header {
+            padding: 1rem 0.5rem;
+        }
+    }
+
+    /* Medium devices (tablets, 768px and down) */
+    @media (max-width: 768px) {
+        header h1 {
+            font-size: 1.5rem;
+        }
+
+        header p {
+            font-size: 0.9rem;
+        }
+    }
+
+    /* Small devices (phones, 576px and down) */
+    @media (max-width: 576px) {
+        header {
+            padding: 0.5rem;
+        }
+
+        header h1 {
+            font-size: 1.25rem;
+            letter-spacing: normal;
+        }
+
+        header p {
+            font-size: 0.8rem;
+        }
+    }
+
+    /* Extra small devices (phones, 425px and down) */
+    @media (max-width: 425px) {
+        header h1 {
+            font-size: 1.1rem;
+            margin-bottom: 0.1rem;
+        }
+
+        header p {
+            font-size: 0.7rem;
+        }
+    }
+
+    /* Very small devices (phones, 320px and down) */
+    @media (max-width: 320px) {
+        header h1 {
+            font-size: 1rem;
+        }
+
+        header p {
+            font-size: 0.65rem;
+        }
+    }
+</style>
+
+<div class="main-content">
+    <header>
+        <div class="header-content">
+            <h1>ILOCOS SUR POLYTECHNIC STATE COLLEGE</h1>
+            <p>Supply Office</p>
+        </div>
+    </header>
+    
+    <!-- Your page content will go here -->
+</div>

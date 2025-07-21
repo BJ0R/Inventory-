@@ -1,0 +1,132 @@
+        :root {
+            --light-bg: #f9f5db;
+            --primary-color: #520000;
+            --secondary-color: #8f0002;
+            --accent-color: hsl(47, 100%, 50%);
+            --card-bg: #f5f5dc;
+            --text-light: #ffffff;
+            --text-dark: #000000;
+            --warning-color: #ffc107;
+            --danger-color: #dc3545;
+            --success-color: #28a745;
+            --info-color: #17a2b8;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background-color: var(--light-bg);
+            font-family: 'Times New Roman', serif;
+        }
+
+        .page-wrapper {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content-wrapper {
+            flex: 1;
+            padding: 20px;
+        }
+
+        h2 {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            font-size: 1.5rem;
+        }
+
+        .card {
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            border: none;
+        }
+
+        .card-header {
+            background-color: var(--secondary-color);
+            color: white;
+            border-radius: 10px 10px 0 0 !important;
+            padding: 15px 20px;
+            font-weight: bold;
+        }
+
+        .btn-primary {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        .btn-success {
+            background-color: var(--success-color);
+            border-color: var(--success-color);
+        }
+
+        .btn-danger {
+            background-color: var(--danger-color);
+            border-color: var(--danger-color);
+        }
+
+        .backup-card {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .backup-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .backup-icon {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        .progress {
+            height: 10px;
+            margin-top: 15px;
+        }
+
+        .progress-bar {
+            background-color: var(--secondary-color);
+        }
+        .modal-header {
+            background-color: var(--primary-color);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .content-wrapper {
+                margin-left: 70px;
+            }
+            .backup-icon {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .content-wrapper {
+                margin-left: 0;
+                padding: 10px;
+            }
+            h2 {
+                font-size: 1.3rem;
+                padding: 10px 15px;
+            }
+            .backup-icon {
+                font-size: 2rem;
+            }
+            .btn {
+                padding: 0.25rem 0.5rem;
+                font-size: 0.8rem;
+            }
+        }

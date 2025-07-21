@@ -1,0 +1,316 @@
+<style>
+    :root {
+        --secondary-color: #8f0002;
+        --primary-color: #520000;
+        --accent-color: hsl(47, 100%, 50%);
+        --light-bg: #f9f5db;
+        --text-light: #ffffff;
+        --sidebar-width: 250px;
+        --sidebar-collapsed-width: 0px;
+        --header-footer-spacing: 1rem;
+    }
+
+    footer {
+        background-color: var(--primary-color);
+        color: var(--text-light);
+        text-align: center;
+        padding: var(--header-footer-spacing);
+        font-size: 0.9rem;
+        margin-left: var(--sidebar-width);
+        width: calc(100% - var(--sidebar-width));
+        transition: all 0.3s ease;
+        box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.15);
+        position: relative;
+        z-index: 10;
+    }
+
+    footer.collapsed {
+        margin-left: var(--sidebar-collapsed-width);
+        width: calc(100% - var(--sidebar-collapsed-width));
+    }
+
+    footer.no-sidebar {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+
+    .footer-info {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.5rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .footer-info p {
+        margin: 0;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.95rem;
+        letter-spacing: 0.5px;
+        position: relative;
+        transition: all 0.3s ease;
+    }
+
+    .footer-info p::after {
+        content: '';
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: var(--accent-color);
+        transition: width 0.3s ease;
+    }
+
+    .footer-info p:hover::after {
+        width: 100%;
+    }
+
+    .footer-info i {
+        color: var(--accent-color);
+        font-size: 1.1rem;
+        transition: transform 0.3s ease;
+    }
+
+    .footer-info p:hover i {
+        transform: scale(1.2);
+    }
+
+    .copyright {
+        font-size: 0.85rem;
+        color: rgba(255, 255, 255, 0.8);
+        margin: 0;
+        font-style: italic;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+    }
+
+    .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        margin: 1rem 0;
+    }
+
+    .social-links a {
+        color: var(--text-light);
+        font-size: 1.2rem;
+        transition: all 0.3s ease;
+        display: inline-block;
+    }
+
+    .social-links a:hover {
+        color: var(--accent-color);
+        transform: translateY(-3px) scale(1.1);
+    }
+
+    .back-to-top {
+        position: absolute;
+        right: 2rem;
+        bottom: 1rem;
+        background-color: var(--accent-color);
+        color: var(--primary-color);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        opacity: 0.8;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .back-to-top:hover {
+        opacity: 1;
+        transform: translateY(-5px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Large devices (laptops/desktops, 1024px and down) */
+    @media (max-width: 1024px) {
+        footer:not(.no-sidebar) {
+            margin-left: var(--sidebar-collapsed-width);
+            width: calc(100% - var(--sidebar-collapsed-width));
+        }
+        
+        .footer-info {
+            gap: 1.25rem;
+        }
+    }
+
+    /* Medium devices (tablets, 768px and down) */
+    @media (max-width: 768px) {
+        footer {
+            padding: 0.75rem;
+        }
+
+        .footer-info p {
+            font-size: 0.9rem;
+        }
+
+        .copyright {
+            font-size: 0.8rem;
+        }
+
+        .back-to-top {
+            right: 1rem;
+            bottom: 0.5rem;
+            width: 35px;
+            height: 35px;
+            font-size: 0.9rem;
+        }
+    }
+
+    /* Small devices (phones, 576px and down) */
+    @media (max-width: 576px) {
+        footer {
+            padding: 0.75rem;
+        }
+
+        .footer-info {
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-info p {
+            font-size: 0.85rem;
+            justify-content: center;
+        }
+
+        .copyright {
+            font-size: 0.75rem;
+        }
+
+        .social-links {
+            gap: 1rem;
+            margin: 0.75rem 0;
+        }
+
+        .back-to-top {
+            position: static;
+            margin: 0.5rem auto 0;
+            width: 30px;
+            height: 30px;
+            font-size: 0.8rem;
+        }
+    }
+
+    /* Extra small devices (phones, 425px and down) */
+    @media (max-width: 425px) {
+        footer {
+            padding: 0.5rem;
+        }
+
+        .footer-info p {
+            font-size: 0.8rem;
+        }
+
+        .copyright {
+            font-size: 0.7rem;
+        }
+    }
+
+    /* Very small devices (phones, 320px and down) */
+    @media (max-width: 320px) {
+        .footer-info p {
+            font-size: 0.75rem;
+        }
+
+        .copyright {
+            font-size: 0.65rem;
+        }
+    }
+</style>
+
+<footer id="mainFooter">
+    <div class="footer-content">
+        <div class="footer-info">
+            <p><i class="bi bi-envelope"></i> Email: ISPSCSupplyOffice@gmail.com</p>
+            <p><i class="bi bi-telephone"></i> Phone: (02) 1234-5678</p>
+            <p><i class="bi bi-geo-alt"></i> Address: Quirino, Tagudin, Ilocos Sur</p>
+        </div>
+        
+        <div class="social-links">
+            <a href="#" title="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" title="Twitter"><i class="bi bi-twitter"></i></a>
+            <a href="#" title="Instagram"><i class="bi bi-instagram"></i></a>
+        </div>
+        
+        <p class="copyright">© <span id="current-year">2025</span> ISPSC Supply Office.</p>
+        
+        <div class="back-to-top" id="backToTop" title="Back to top">
+            <i class="bi bi-arrow-up"></i>
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Update copyright year automatically
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        // Back to top button functionality
+        const backToTopBtn = document.getElementById('backToTop');
+        if (backToTopBtn) {
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Show/hide button based on scroll position
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTopBtn.style.opacity = '0.8';
+                    backToTopBtn.style.visibility = 'visible';
+                } else {
+                    backToTopBtn.style.opacity = '0';
+                    backToTopBtn.style.visibility = 'hidden';
+                }
+            });
+        }
+        
+        // Initialize footer position based on sidebar state
+        function updateFooterPosition() {
+            const footer = document.getElementById('mainFooter');
+            const sidebar = document.getElementById('sidebar');
+            
+            if (footer && sidebar) {
+                if (window.innerWidth <= 768) {
+                    if (sidebar.classList.contains('active')) {
+                        footer.classList.remove('no-sidebar');
+                    } else {
+                        footer.classList.add('no-sidebar');
+                    }
+                } else if (window.innerWidth <= 1024) {
+                    footer.classList.remove('no-sidebar');
+                    if (sidebar.classList.contains('collapsed')) {
+                        footer.classList.add('collapsed');
+                    } else {
+                        footer.classList.remove('collapsed');
+                    }
+                } else {
+                    footer.classList.remove('no-sidebar', 'collapsed');
+                }
+            }
+        }
+        
+        // Initial update
+        updateFooterPosition();
+        
+        // Update on resize
+        window.addEventListener('resize', updateFooterPosition);
+    });
+</script>

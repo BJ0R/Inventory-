@@ -1,0 +1,228 @@
+ :root {
+            --light-bg: #f9f5db;
+            --primary-color: #520000;
+            --secondary-color: #8f0002;
+            --accent-color: hsl(47, 100%, 50%);
+            --card-bg: #f5f5dc;
+            --text-light: #ffffff;
+            --text-dark: #000000;
+            --warning-color: #ffc107;
+            --danger-color: #dc3545;
+            --success-color: #28a745;
+            --info-color: #17a2b8;
+        }
+
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background-color: var(--light-bg);
+            font-family: 'Times New Roman', serif;
+        }
+
+        .page-wrapper {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content-wrapper {
+            flex: 1;
+            padding: 20px;
+        }
+
+        h2 {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            font-size: 1.5rem;
+        }
+
+        .card {
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            border: none;
+            height: 100%;
+        }
+
+        .card-header {
+            background-color: var(--secondary-color);
+            color: white;
+            border-radius: 10px 10px 0 0 !important;
+            padding: 15px 20px;
+            font-weight: bold;
+        }
+
+        .stat-card {
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .stat-icon {
+            font-size: 2.5rem;
+            opacity: 0.8;
+        }
+
+        .trend-up {
+            color: var(--success-color);
+        }
+
+        .trend-down {
+            color: var(--danger-color);
+        }
+
+        .trend-neutral {
+            color: var(--warning-color);
+        }
+
+        .low-stock {
+            color: var(--danger-color);
+            font-weight: bold;
+        }
+
+        .pending-requests {
+            color: var(--warning-color);
+            font-weight: bold;
+        }
+
+        .chart-container {
+            position: relative;
+            height: 300px;
+            width: 100%;
+        }
+
+        .activity-item {
+            border-left: 3px solid var(--secondary-color);
+            padding-left: 10px;
+            margin-bottom: 10px;
+        }
+
+        .activity-time {
+            font-size: 0.8rem;
+            color: #6c757d;
+        }
+
+        .request-item {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        /* Filter Controls Styles */
+        /* Use flexbox for the filter group, allowing it to wrap */
+        .filter-group {
+            display: flex;
+            gap: 10px; /* Space between filters */
+            align-items: center;
+            flex-wrap: wrap; /* Allows items to wrap to the next line */
+        }
+
+        /* Ensure selects take up available space, but not greedily */
+        .filter-select {
+            flex: 1; /* Allows flex items to grow and shrink as needed */
+            min-width: 120px; /* Minimum width for select boxes */
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .content-wrapper {
+                padding: 15px;
+            }
+
+            .stat-value {
+                font-size: 1.5rem;
+            }
+
+            .stat-icon {
+                font-size: 2rem;
+            }
+            
+            /* Stack filters vertically on small screens for the filter-group */
+            .filter-group {
+                flex-direction: column;
+                width: 100%; /* Make the container take full width */
+            }
+            
+            .filter-select {
+                width: 100%; /* Make select boxes take full width when stacked */
+                flex: none; /* Remove flex growing/shrinking for full width */
+            }
+            
+            /* The d-flex and flex-wrap on card-header will handle the wrapping */
+            .card-header .form-select {
+                margin-top: 5px; /* Add some space when stacked */
+            }
+
+            /* Improved spacing for mobile */
+            .row {
+                margin-left: -10px;
+                margin-right: -10px;
+            }
+            
+            .row > [class*="col-"] {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+            
+            .card {
+                margin-bottom: 15px;
+            }
+            
+            /* Consistent spacing between rows */
+            .mb-4 {
+                margin-bottom: 1.5rem !important;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .content-wrapper {
+                margin-left: 0;
+                padding: 10px;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+                padding: 10px 15px;
+                margin-bottom: 15px;
+            }
+
+            .stat-card {
+                margin-bottom: 15px;
+            }
+            
+            .chart-container {
+                height: 250px;
+            }
+            
+            /* Even tighter spacing for very small screens */
+            .row {
+                margin-left: -8px;
+                margin-right: -8px;
+            }
+            
+            .row > [class*="col-"] {
+                padding-left: 8px;
+                padding-right: 8px;
+            }
+            
+            .card {
+                margin-bottom: 12px;
+            }
+            
+            .mb-4 {
+                margin-bottom: 1.25rem !important;
+            }
+        }
