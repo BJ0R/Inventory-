@@ -1,6 +1,6 @@
 # ISPSC Supply Office Management System
 
-![ISPSC Logo](./images/logo.png)
+![ISPSC Logo](./images/logo.ico)
 ## 📌 Overview
 This web application streamlines the supply request and inventory management process for ISPSC, featuring:
 - User-friendly dashboard
