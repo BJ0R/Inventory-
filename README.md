@@ -29,5 +29,5 @@ This web application streamlines the supply request and inventory management pro
 ### Setup Instructions
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/yourusername/ispsc-supply-office.git
+   https://github.com/BJ0R/Inventory-.git
    cd ispsc-supply-office
