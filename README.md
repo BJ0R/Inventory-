@@ -1,7 +1,6 @@
 # ISPSC Supply Office Management System
 
-![ISPSC Logo](https://via.placeholder.com/150x50?text=ISPSC+Logo)  
-*A modern inventory and request management system for Ilocos Sur Polytechnic State College*
+![ISPSC Logo](./images/logo.png)
 
 ## 📌 Overview
 This web application streamlines the supply request and inventory management process for ISPSC, featuring:
