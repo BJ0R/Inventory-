@@ -30,4 +30,4 @@ This web application streamlines the supply request and inventory management pro
 1. **Clone the repository**:
    ```bash
    https://github.com/BJ0R/Inventory-.git
-   cd ispsc-supply-office
+   
