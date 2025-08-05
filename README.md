@@ -18,10 +18,4 @@ This web application streamlines the supply request and inventory management pro
   - Bootstrap Icons
   - jQuery
 
-## 🚀 Installation Guide
-
-### Prerequisites
-- Web server (Apache/Nginx)
-- PHP 7.4 or higher
-- MySQL 5.7 or higher
 
