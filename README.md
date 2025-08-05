@@ -24,10 +24,4 @@ This web application streamlines the supply request and inventory management pro
 - Web server (Apache/Nginx)
 - PHP 7.4 or higher
 - MySQL 5.7 or higher
-- Composer (for optional dependencies)
 
-### Setup Instructions
-1. **Clone the repository**:
-   ```bash
-   https://github.com/BJ0R/Inventory-.git
-   
